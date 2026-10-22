@@ -147,3 +147,10 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# Added for this repo
+.DS_Store
+*.pem
+*.key
+.env*
+!.env.example

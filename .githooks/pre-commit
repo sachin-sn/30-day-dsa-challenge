@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+# Runs before every commit. Blocks the commit if:
+#   1. a staged file looks like a secret file (.env, *.pem, *.key), or
+#   2. a line being added looks like a secret (API keys, private keys), or
+#   3. the TypeScript type check fails (only if node_modules is installed).
+# Turn on once per clone with: npm install  (the "prepare" script sets core.hooksPath)
+set -u
+
+fail=0
+
+# 1. Secret files
+bad_files=$(git diff --cached --name-only --diff-filter=ACM | grep -E '(^|/)(\.env($|\.)|.*\.pem$|.*\.key$)' | grep -v '\.env\.example$' || true)
+if [ -n "$bad_files" ]; then
+  echo "BLOCKED: these staged files look like secrets:"
+  echo "$bad_files" | sed 's/^/  /'
+  fail=1
+fi
+
+# 2. Secret-looking text in added lines
+patterns='sk-ant-[A-Za-z0-9_-]{20,}|sk-[A-Za-z0-9]{32,}|AKIA[0-9A-Z]{16}|ghp_[A-Za-z0-9]{36}|github_pat_[A-Za-z0-9_]{40,}|xox[baprs]-[A-Za-z0-9-]{10,}|-----BEGIN ([A-Z]+ )?PRIVATE KEY-----|AIza[0-9A-Za-z_-]{35}'
+hits=$(git diff --cached -U0 --diff-filter=ACM | grep -E '^\+[^+]' | grep -E "$patterns" || true)
+if [ -n "$hits" ]; then
+  echo "BLOCKED: $(echo "$hits" | wc -l | tr -d ' ') added line(s) look like a secret (values not shown)."
+  echo "  Find them with: git diff --cached | grep -E '^\\+' | grep -nE 'sk-|AKIA|ghp_|PRIVATE KEY'"
+  fail=1
+fi
+
+# 3. Type check
+if [ -d node_modules ]; then
+  if ! npx --no-install tsc --noEmit; then
+    echo "BLOCKED: tsc --noEmit failed. Fix the type errors above."
+    fail=1
+  fi
+fi
+
+if [ "$fail" -ne 0 ]; then
+  echo "Commit stopped. (To skip once on purpose: git commit --no-verify)"
+  exit 1
+fi

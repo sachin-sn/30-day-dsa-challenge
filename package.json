@@ -1,0 +1,16 @@
+{
+  "name": "30-day-dsa-challenge",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "30 days of DSA problems in TypeScript: brute force, better solution, operation counts and diagrams.",
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  },
+  "scripts": {
+    "prepare": "git config core.hooksPath .githooks || true",
+    "typecheck": "tsc --noEmit"
+  }
+}
