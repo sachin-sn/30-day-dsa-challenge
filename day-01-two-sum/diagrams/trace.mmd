@@ -1,0 +1,9 @@
+sequenceDiagram
+  participant A as nums = [2, 7, 11, 15], target = 9
+  participant M as seen (hash map)
+  A->>M: i=0, value 2: is 9 - 2 = 7 in seen?
+  M-->>A: no
+  A->>M: store 2 at index 0
+  A->>M: i=1, value 7: is 9 - 7 = 2 in seen?
+  M-->>A: yes, at index 0
+  Note over A,M: answer [0, 1] after 2 lookups, no inner loop

@@ -43,35 +43,35 @@ npx -p @mermaid-js/mermaid-cli mmdc -i day-01-two-sum/diagrams/flow.mmd -o day-0
 
 ## Days
 
-| Day | Problem | Pattern | Status | Blog | LinkedIn |
-|-----|---------|---------|--------|------|----------|
-| 1   | Two Sum | Hash map | Not started | —    | —        |
-| 2   | Longest Consecutive Sequence | Hash set | Not started | —    | —        |
-| 3   | Group Anagrams | Hash map as a key | Not started | —    | —        |
-| 4   | Subarray Sum Equals K | Prefix sum + hash map | Not started | —    | —        |
-| 5   | Product of Array Except Self | Prefix and suffix | Not started | —    | —        |
-| 6   | 3Sum | Sort + two pointers | Not started | —    | —        |
-| 7   | Container With Most Water | Two pointers | Not started | —    | —        |
-| 8   | Trapping Rain Water | Two pointers | Not started | —    | —        |
-| 9   | Maximum sum of a subarray of size k | Fixed sliding window | Not started | —    | —        |
-| 10  | Longest Substring Without Repeating Characters | Variable sliding window | Not started | —    | —        |
-| 11  | Longest Repeating Character Replacement | Sliding window | Not started | —    | —        |
-| 12  | Sliding Window Maximum | Monotonic deque | Not started | —    | —        |
-| 13  | Valid Parentheses | Stack | Not started | —    | —        |
-| 14  | Daily Temperatures | Monotonic stack | Not started | —    | —        |
-| 15  | Largest Rectangle in Histogram | Monotonic stack | Not started | —    | —        |
-| 16  | Search in Rotated Sorted Array | Binary search | Not started | —    | —        |
-| 17  | Koko Eating Bananas | Binary search on the answer | Not started | —    | —        |
-| 18  | Top K Frequent Elements | Heap / bucket | Not started | —    | —        |
-| 19  | Kth Largest Element | Heap | Not started | —    | —        |
-| 20  | Linked List Cycle | Fast and slow pointers | Not started | —    | —        |
-| 21  | Validate Binary Search Tree | Tree recursion with bounds | Not started | —    | —        |
-| 22  | Diameter of Binary Tree | Tree recursion, return two things | Not started | —    | —        |
-| 23  | Redundant Connection | Union-Find | Not started | —    | —        |
-| 24  | Course Schedule | Topological sort | Not started | —    | —        |
-| 25  | Climbing Stairs | Memoization | Not started | —    | —        |
-| 26  | House Robber | Dynamic programming | Not started | —    | —        |
-| 27  | Coin Change | Dynamic programming | Not started | —    | —        |
-| 28  | Longest Increasing Subsequence | DP + binary search | Not started | —    | —        |
-| 29  | Implement Trie (prefix search) | Trie | Not started | —    | —        |
-| 30  | LRU Cache (capstone) | Hash map + doubly linked list | Not started | —    | —        |
+| Day | Problem | Pattern | Status |
+|-----|---------|---------|--------|
+| 1   | Two Sum | Hash map | In progress (started 2026-10-26) |
+| 2   | Longest Consecutive Sequence | Hash set | Not started |
+| 3   | Group Anagrams | Hash map as a key | Not started |
+| 4   | Subarray Sum Equals K | Prefix sum + hash map | Not started |
+| 5   | Product of Array Except Self | Prefix and suffix | Not started |
+| 6   | 3Sum | Sort + two pointers | Not started |
+| 7   | Container With Most Water | Two pointers | Not started |
+| 8   | Trapping Rain Water | Two pointers | Not started |
+| 9   | Maximum sum of a subarray of size k | Fixed sliding window | Not started |
+| 10  | Longest Substring Without Repeating Characters | Variable sliding window | Not started |
+| 11  | Longest Repeating Character Replacement | Sliding window | Not started |
+| 12  | Sliding Window Maximum | Monotonic deque | Not started |
+| 13  | Valid Parentheses | Stack | Not started |
+| 14  | Daily Temperatures | Monotonic stack | Not started |
+| 15  | Largest Rectangle in Histogram | Monotonic stack | Not started |
+| 16  | Search in Rotated Sorted Array | Binary search | Not started |
+| 17  | Koko Eating Bananas | Binary search on the answer | Not started |
+| 18  | Top K Frequent Elements | Heap / bucket | Not started |
+| 19  | Kth Largest Element | Heap | Not started |
+| 20  | Linked List Cycle | Fast and slow pointers | Not started |
+| 21  | Validate Binary Search Tree | Tree recursion with bounds | Not started |
+| 22  | Diameter of Binary Tree | Tree recursion, return two things | Not started |
+| 23  | Redundant Connection | Union-Find | Not started |
+| 24  | Course Schedule | Topological sort | Not started |
+| 25  | Climbing Stairs | Memoization | Not started |
+| 26  | House Robber | Dynamic programming | Not started |
+| 27  | Coin Change | Dynamic programming | Not started |
+| 28  | Longest Increasing Subsequence | DP + binary search | Not started |
+| 29  | Implement Trie (prefix search) | Trie | Not started |
+| 30  | LRU Cache (capstone) | Hash map + doubly linked list | Not started |

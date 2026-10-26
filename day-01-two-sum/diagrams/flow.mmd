@@ -1,0 +1,15 @@
+flowchart TB
+  subgraph brute["Brute force: O(n²)"]
+    direction TB
+    b1["pick nums[i]"] --> b2["scan every later nums[j]"]
+    b2 --> b3{"nums[i] + nums[j] = target?"}
+    b3 -- "no, next j" --> b2
+    b3 -- "yes" --> b4["return [i, j]"]
+  end
+  subgraph fast["Hash map: O(n)"]
+    direction TB
+    f1["read nums[i]"] --> f2{"target - nums[i] in seen?"}
+    f2 -- "no" --> f3["seen[nums[i]] = i"]
+    f3 --> f1
+    f2 -- "yes" --> f4["return [seen[target - nums[i]], i]"]
+  end
