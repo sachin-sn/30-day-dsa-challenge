@@ -1,0 +1,12 @@
+sequenceDiagram
+  participant W as words = [eat, tea, tan, ate]
+  participant G as groups (key to list of words)
+  W->>G: eat: key = a1 e1 t1, new key
+  G-->>W: groups[a1 e1 t1] = [eat]
+  W->>G: tea: key = a1 e1 t1, key exists
+  G-->>W: groups[a1 e1 t1] = [eat, tea]
+  W->>G: tan: key = a1 n1 t1, new key
+  G-->>W: groups[a1 n1 t1] = [tan]
+  W->>G: ate: key = a1 e1 t1, key exists
+  G-->>W: groups[a1 e1 t1] = [eat, tea, ate]
+  Note over W,G: answer: 2 groups. Each word is read once and its key is built in one pass over its letters.

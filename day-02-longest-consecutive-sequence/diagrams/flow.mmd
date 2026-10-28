@@ -1,0 +1,22 @@
+flowchart TB
+  subgraph brute["Brute force: sort first, O(n log n)"]
+    direction TB
+    b1["copy and sort nums"] --> b2["walk the sorted list"]
+    b2 --> b3{"same as previous?"}
+    b3 -- "yes: duplicate" --> b2
+    b3 -- "no" --> b4{"previous + 1?"}
+    b4 -- "yes" --> b5["run = run + 1"]
+    b4 -- "no" --> b6["run = 1"]
+    b5 --> b7["best = max(best, run)"]
+    b6 --> b7
+    b7 --> b2
+  end
+  subgraph fast["Hash set: O(n)"]
+    direction TB
+    f1["put every number in a set"] --> f2["read x"]
+    f2 --> f3{"x - 1 in the set?"}
+    f3 -- "yes: x is not a start" --> f2
+    f3 -- "no: x starts a run" --> f4["count x, x+1, x+2 ... while in the set"]
+    f4 --> f5["best = max(best, count)"]
+    f5 --> f2
+  end

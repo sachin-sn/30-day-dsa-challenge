@@ -1,0 +1,15 @@
+flowchart TB
+  subgraph brute["Brute force: key by sorting, O(n · k log k)"]
+    direction TB
+    b1["read a word"] --> b2["sort its letters: eat becomes aet"]
+    b2 --> b3["key = the sorted letters"]
+    b3 --> b4["add the word to groups[key]"]
+    b4 --> b1
+  end
+  subgraph fast["Letter counts as the key: O(n · k)"]
+    direction TB
+    f1["read a word"] --> f2["count each letter, no sorting"]
+    f2 --> f3["key = the 26 counts"]
+    f3 --> f4["add the word to groups[key]"]
+    f4 --> f1
+  end

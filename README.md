@@ -46,8 +46,8 @@ npx -p @mermaid-js/mermaid-cli mmdc -i day-01-two-sum/diagrams/flow.mmd -o day-0
 | Day | Problem | Pattern | Status |
 |-----|---------|---------|--------|
 | 1   | Two Sum | Hash map | In progress (started 2026-10-26) |
-| 2   | Longest Consecutive Sequence | Hash set | Not started |
-| 3   | Group Anagrams | Hash map as a key | Not started |
+| 2   | Longest Consecutive Sequence | Hash set | In progress (started 2026-10-27) |
+| 3   | Group Anagrams | Hash map as a key | In progress (started 2026-10-28) |
 | 4   | Subarray Sum Equals K | Prefix sum + hash map | Not started |
 | 5   | Product of Array Except Self | Prefix and suffix | Not started |
 | 6   | 3Sum | Sort + two pointers | Not started |

@@ -1,0 +1,19 @@
+sequenceDiagram
+  participant A as nums = [100, 4, 200, 1, 3, 2]
+  participant S as set
+  A->>S: put all 6 numbers in the set
+  A->>S: x=100: is 99 in the set?
+  S-->>A: no, so 100 starts a run
+  A->>S: is 101 in the set?
+  S-->>A: no, run length 1
+  A->>S: x=4: is 3 in the set?
+  S-->>A: yes, so skip 4
+  A->>S: x=200: is 199 in the set?
+  S-->>A: no, so 200 starts a run
+  A->>S: is 201 in the set?
+  S-->>A: no, run length 1
+  A->>S: x=1: is 0 in the set?
+  S-->>A: no, so 1 starts a run
+  A->>S: are 2, 3, 4 in the set, and 5?
+  S-->>A: 2, 3, 4 yes, 5 no: run length 4
+  Note over A,S: x=3 and x=2 are skipped (2 and 1 are in the set). Answer 4. Every number is touched at most twice.
